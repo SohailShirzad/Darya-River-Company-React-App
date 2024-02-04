@@ -1,14 +1,17 @@
 *{
-    color: white;
-    font-family: 'Outfit', 'Kavivanar' sans-serif;
-    font-size: 16px;
     --red: #FF1A1A;
     --white: #fff;
     --black: rgb(0,0,0);
     --veryLightCream: #F6EFEA;
+    font-family: 'Outfit' 'Kavivanar' sans-serif;
+    color: var(--black);
+    font-size: 16px;
 }
 .flex{
     display: flex;
+}
+.grid{
+    display: grid;
 }
 .relative{
     position: relative;

@@ -6,6 +6,7 @@
     background-size: cover;
     height: 931px;
 
+
 }
 .headerSVG{
     position: relative;
@@ -27,6 +28,7 @@
     gap: 32rem;
     position: relative;
     z-index: 1;
+    
 }
 .headerList{
     margin-top: 40px;
@@ -35,4 +37,52 @@
     font-size: 1rem;
     font-family: 'Kavivanar', sans-serif;
 }
+.headerList a{
+    color: #fff;
+}
+
+
+/* Main Section Text */
+.main-section-text-container{
+    grid-template-columns: repeat(12, 1fr);
+
+}
+.main-section-text{
+    color: black;
+    font-weight: bold;
+    font-size: 2rem;
+    grid-area: 1 / 6 / 1 / 11;
+    text-align: justify;
+    padding-left: 10px;
+    
+}
+
+/* Main Section Services */
+.line-div{
+    background-color: black;
+    height: 2px;
+    width: 100%;
+}
+.main-section-services-div-container{
+    margin-top: 10rem;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8,50px);
+
+}
+.main-section-services-childs:nth-last-child(1){
+    grid-area: 1 / 9 / 4 / 11 ;
+}
+
+.main-section-services-childs:nth-last-child(2){
+    grid-area: 5 / 9 / 9 / 11 ;
+}
+
+.main-section-services-childs:nth-last-child(3){
+    grid-area: 5 / 6 / 8 / 8 ;
+}
+
+.main-section-services-childs:nth-last-child(4){
+    grid-area: 1 / 6 / 4 / 8 ;
+}
+
 
