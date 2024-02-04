@@ -13,8 +13,11 @@
 .veryLightCream-background{background-color: var(--veryLightCream);}
 .black-text{color: var(--black);}
 .white-text{color: var(--white);}
+.red-text{color: var(--red);}
 .flex{display: flex;}
 .align-bottom{align-items: flex-end;}
+.align-center{align-items: center;}
+.justify-center{justify-content: center;}
 .space-between{justify-content: space-between;}
 .column-direction{flex-direction: column;}
 .row-direction{flex-direction: row;}
@@ -22,6 +25,9 @@
 .relative{position: relative;}
 .no-bullets{list-style: none;}
 .no-underline{text-decoration: none;}
+.bold{font-weight: bold;}
+.bolder{font-weight: bolder;}
+.outfit{font-family: 'Outfit';}
 .get-in-touch{
     background-color: var(--red);
     width: fit-content;

@@ -38,6 +38,33 @@ function App() {
           />
         </div>
         <FlexibleServiecs />
+        <h2 id='our-team-heading'>Our Team</h2>
+        <div className='flex our-team-container'>
+          <OurTeam
+            img = '/images/profilePhotoTemp.jpg' 
+            name = "Sohail"
+            title = "Software Engineer"
+            email = "mailto: sohail_shirzad@hotmail.com"
+            tel = "tel: 07961977725"
+          />
+          <OurTeam
+            img = '/images/profilePhotoTemp.jpg' 
+            name = "Rahmatullah Shirzaei"
+            title = "CEO"
+            email = "mailto: sohail_shirzad@hotmail.com"
+            tel = "tel: 07961977725"
+          />
+          <OurTeam
+            img = '/images/profilePhotoTemp.jpg' 
+            name = "Isa Shirzaei"
+            title = "Director"
+            email = "mailto: sohail_shirzad@hotmail.com"
+            tel = "tel: 07961977725"
+          />
+        </div>
+       
+        <br />
+        <br />
       </div>
     </div>
   );
