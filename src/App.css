@@ -82,6 +82,8 @@
 .main-section-services-childs:nth-last-child(4){
     grid-area: 1 / 6 / 4 / 8 ;
 }
+#main-section-services-h2{font-size: 1.2rem;}
+#main-section-services-p{font-size: 1.1rem;}
 
 /* flexible services section */
 
@@ -160,3 +162,36 @@
 }
 #get-in-touch-h2{font-size: 3rem;}
 #get-in-touch-paragraph{font-size: 7rem;}
+
+/* Footer section */
+.footer-container{
+    width: 100%;
+    height: 650px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 108px);
+}
+.footer-a-logo{
+    grid-area: 2 / 3 / 4 / 6;
+}
+.footerSVG{
+    width: 90%;
+    height: 100%;
+}
+#footer-left-column{
+    grid-area: 4 / 3 / 5 / 6  ;
+}
+
+#footer-middle-column{
+    grid-area: 4 / 7 / 5 / 11 ;
+}
+
+#footer-right-column{
+    grid-area: 4 / 9 / 5 / 11
+}
+.footer-nav a , li {
+    font-size: 1.5rem;
+    color: white;
+    font-family: outfit;
+    list-style: none;
+    text-decoration: none;
+}

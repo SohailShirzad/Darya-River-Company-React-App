@@ -6,7 +6,7 @@ import FlexibleServiecs from './components/FlexibleServices';
 import OurTeam from './components/OurTeam';
 import PeaceOfMind from './components/PeaceOfMind'
 import GetInTouch from './components/GetInTouch'
-import Footer from './components/GetInTouch'
+import Footer from './components/Footer'
 
 function App() {
   const title = 'Welcome'
@@ -65,8 +65,7 @@ function App() {
        
         <PeaceOfMind />
         <GetInTouch />
-        <br />
-        <br />
+        <Footer />
       </div>
     </div>
   );
