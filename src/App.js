@@ -37,6 +37,7 @@ function App() {
             description = "Descriptionshould be added here so we can meijislirdfierksierlskjr." 
           />
         </div>
+        <FlexibleServiecs />
       </div>
     </div>
   );

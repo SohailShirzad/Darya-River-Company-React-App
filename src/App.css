@@ -37,9 +37,7 @@
     font-size: 1rem;
     font-family: 'Kavivanar', sans-serif;
 }
-.headerList a{
-    color: #fff;
-}
+.headerList a{color: #fff;}
 
 
 /* Main Section Text */
@@ -83,6 +81,38 @@
 
 .main-section-services-childs:nth-last-child(4){
     grid-area: 1 / 6 / 4 / 8 ;
+}
+
+/* flexible services section */
+
+.flexible-services-section{
+    height: 1000px;
+    margin-top: 7rem;
+    justify-content: center;
+}
+.flexible-services-black{width: 33.33%;}
+.flexible-services-red{width: 33.33%;}
+
+.flexible-services-image{
+    background-image: url("../public/images/flexibleservicesimage.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 33.33%;
+}
+/* .flexible-image-heading-background{
+    opacity: 20%;
+    
+} */
+#flexible-services-h2{
+    font-size: 5rem;
+    font-family: 'Outfit';
+    padding-left: 4rem;
+}
+.flexible-services-bottom-headings{
+    font-size: 3rem;
+    font-family: 'Outfit';
+    padding-left: 5rem;
+    font-weight: bolder;
 }
 
 
