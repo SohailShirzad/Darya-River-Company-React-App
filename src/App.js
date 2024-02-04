@@ -63,6 +63,7 @@ function App() {
           />
         </div>
        
+        <PeaceOfMind />
         <br />
         <br />
       </div>

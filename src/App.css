@@ -144,3 +144,11 @@
 .our-team-social-icons{width: 100px; height: 50px;}
 .our-team-icons{width: 50%;}
 
+/* Peace of mind section */
+
+.peace-of-mind-container{margin-top: 5rem; width: 100%; height: 900px; }
+.peace-of-mind-right-section{width: 55%;}
+.peace-of-mind-left-section{width: 45%;}
+.peace-of-mind-image{height: 100%; width: 100%;}
+#for-peace-of-mind-title{font-size:4rem; margin-top:0.3rem; padding-left: 2rem;}
+#for-peace-of-mind-bottom-title{font-size: 2.5rem; padding-left: 2rem;}
