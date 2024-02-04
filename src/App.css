@@ -152,3 +152,11 @@
 .peace-of-mind-image{height: 100%; width: 100%;}
 #for-peace-of-mind-title{font-size:4rem; margin-top:0.3rem; padding-left: 2rem;}
 #for-peace-of-mind-bottom-title{font-size: 2.5rem; padding-left: 2rem;}
+
+/* Get in touch */
+.get-in-touch-container{
+    width: 100%;
+    height: 800px;
+}
+#get-in-touch-h2{font-size: 3rem;}
+#get-in-touch-paragraph{font-size: 7rem;}

@@ -64,6 +64,7 @@ function App() {
         </div>
        
         <PeaceOfMind />
+        <GetInTouch />
         <br />
         <br />
       </div>

@@ -10,6 +10,7 @@ export default function PeaceOfMind(){
             <div className='flex column-direction space-between black-background peace-of-mind-right-section'>
                 <p className='white-text outfit bold' id='for-peace-of-mind-title'>For peace of mind</p>
                 <h2 className='white-text outfit bold' id='for-peace-of-mind-bottom-title'>Talk to Darya River's experts today</h2>
+                
             </div>
 
         </div>

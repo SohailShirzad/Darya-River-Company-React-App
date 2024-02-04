@@ -3,6 +3,7 @@
     --white: #fff;
     --black: rgb(0,0,0);
     --veryLightCream: #F6EFEA;
+    --lightGray: #757575;
     font-family: 'Outfit' 'Kavivanar' sans-serif;
     color: var(--black);
     font-size: 16px;
@@ -14,6 +15,7 @@
 .black-text{color: var(--black);}
 .white-text{color: var(--white);}
 .red-text{color: var(--red);}
+.light-gray-text{color: var(--lightGray);}
 .flex{display: flex;}
 .align-bottom{align-items: flex-end;}
 .align-center{align-items: center;}
