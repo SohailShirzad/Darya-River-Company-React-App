@@ -12,7 +12,6 @@ function App() {
   return (
     <div className="App">
       <div className="content">
-        <h1>{title} App Component</h1>
         <Navbar />
       </div>
     </div>

@@ -1,38 +1,38 @@
-.App {
-  text-align: center;
+/* Navbar */
+.header{
+    background: url("../public/images/dog2.png");
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    height: 931px;
+
+}
+.headerSVG{
+    position: relative;
+    top: -40px;
+    width: 90%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.rectangle{
+    width: 100%;
+    z-index: 0;
+    max-height: 216px;
+    min-height: 216px;
+    position: absolute;
+    opacity: 10%;
+    background-color: #d2d2d2;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.headerNav{
+    gap: 32rem;
+    position: relative;
+    z-index: 1;
+}
+.headerList{
+    margin-top: 40px;
+    gap:2rem;
+    align-self:first baseline;
+    font-size: 1rem;
+    font-family: 'Kavivanar', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
