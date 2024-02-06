@@ -8,10 +8,13 @@
 
 
 }
+.width-60{width: 60%;}
+
+.width-40{width: 40%;}
+
+
 .headerSVG{
-    position: relative;
-    top: -40px;
-    width: 90%;
+    width: 45%;
 }
 
 .rectangle{
@@ -25,7 +28,6 @@
 }
 
 .headerNav{
-    gap: 32rem;
     position: relative;
     z-index: 1;
     
@@ -33,11 +35,10 @@
 .headerList{
     margin-top: 40px;
     gap:2rem;
-    align-self:first baseline;
     font-size: 1rem;
     font-family: 'Kavivanar', sans-serif;
 }
-.headerList a{color: #fff;}
+.headerList a{color: #fff; font-size: 1.3rem;}
 
 
 /* Main Section Text */
@@ -162,6 +163,100 @@
 }
 #get-in-touch-h2{font-size: 3rem;}
 #get-in-touch-paragraph{font-size: 7rem;}
+
+
+/* Contact section */
+
+.contact-container{
+    width: 100%;
+    height: 400px;
+}
+
+#contact-page-contact-form {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.input-container {
+    margin-top: 0.2rem;
+    display: inline-flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.material-symbols-outlined {
+    color: white;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+
+.input-container textarea {
+    width: 70%;
+    height: 150px;
+}
+
+.input-container input, textarea {
+    width: 70%;
+    border: none;
+    background-color: #1E1E1E;
+    outline: none;
+    border-bottom: 1px solid rgb(255, 26, 26);
+    color: rgb(255,255,255);
+}
+.contact-left-section {width: 45%;}
+.contact-right-section{width: 55%;}
+.contact-right-section svg{width: fit-content;height: 100%;}
+#contact-left-section-heading{font-size: 1.7rem;}
+
+#Submit-button{
+    width: fit-content;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0 30px;
+    border: 1px solid #FF1A1A;
+    border-radius: 20px;
+    align-self: center;
+}
+#tail{
+    /* animation: tail 2s infinite linear(0.78 -27.11%,-0.29 112.41%), tail2 2s infinite;
+     */
+    animation: tail 4s infinite 2s linear;
+    transition-duration: infinit;
+    transform-origin: left;
+    transform-box: fill-box;
+    background-color: aqua;
+    color: aqua;
+}
+
+
+
+@keyframes tail{
+    from {
+        transform:skewY(0deg);
+    }
+
+    50%{
+        transform: skewY(20deg);
+    }
+
+    to{
+        transform: skewY(0deg);
+    }
+
+}
+
+@keyframes tail2{
+    from {
+        transform: skewY(20deg); 
+
+    }
+
+    to {
+        transform:skewY(0deg);
+
+    }
+}
 
 /* Footer section */
 .footer-container{

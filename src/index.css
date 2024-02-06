@@ -2,12 +2,14 @@
     --red: #FF1A1A;
     --white: #fff;
     --black: rgb(0,0,0);
+    --light-black: #1E1E1E;
     --veryLightCream: #F6EFEA;
     --lightGray: #757575;
     font-family: 'Outfit' 'Kavivanar' sans-serif;
     color: var(--black);
     font-size: 16px;
 }
+.light-black{background-color: var(--light-black);}
 .black-background{background-color: var(--black);}
 .red-background{background-color: var(--red);}
 .white-background{background-color: var(--white);}
@@ -22,6 +24,7 @@
 .justify-center{justify-content: center;}
 .space-between{justify-content: space-between;}
 .column-direction{flex-direction: column;}
+.text-center{text-align: center;}
 .row-direction{flex-direction: row;}
 .grid{display: grid;}
 .relative{position: relative;}

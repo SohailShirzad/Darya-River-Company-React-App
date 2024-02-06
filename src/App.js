@@ -7,6 +7,7 @@ import OurTeam from './components/OurTeam';
 import PeaceOfMind from './components/PeaceOfMind'
 import GetInTouch from './components/GetInTouch'
 import Footer from './components/Footer'
+import Contact from './components/Contact';
 
 function App() {
   const title = 'Welcome'
@@ -62,9 +63,12 @@ function App() {
             tel = "tel: 07961977725"
           />
         </div>
+
+        
        
         <PeaceOfMind />
         <GetInTouch />
+        <Contact />
         <Footer />
       </div>
     </div>
