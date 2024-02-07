@@ -3,7 +3,7 @@ import '../index.css'
 
 export default function PeaceOfMind(){
     return(
-        <div className='flex peace-of-mind-container'>
+        <section className='flex peace-of-mind-container'>
             <div className='peace-of-mind-left-section'>
                 <img className='peace-of-mind-image' src="../images/peaceofmind.png" alt="Darya River's director standing in front of a room and explaining the strategy to two of the employees who are sitting down on sofa" />
             </div>
@@ -13,6 +13,6 @@ export default function PeaceOfMind(){
                 
             </div>
 
-        </div>
+        </section>
     )
 }

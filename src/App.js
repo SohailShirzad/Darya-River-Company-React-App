@@ -10,7 +10,9 @@ import Footer from './components/Footer'
 import Contact from './components/Contact';
 
 function App() {
-  const title = 'Welcome'
+
+  console.log("2");
+
   return (
     <div className="App">
       <div className="content">
@@ -62,10 +64,7 @@ function App() {
             email = "mailto: sohail_shirzad@hotmail.com"
             tel = "tel: 07961977725"
           />
-        </div>
-
-        
-       
+        </div>       
         <PeaceOfMind />
         <GetInTouch />
         <Contact />

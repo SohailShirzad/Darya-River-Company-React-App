@@ -3,7 +3,7 @@ import '../index.css';
 
 export default function FlexibleServices(){
     return(
-        <div className='flex flexible-services-section'>
+        <section className='flex flexible-services-section'>
             <div className="flexible-services-black black-background flex column-direction space-between">
                 <h2 className='white-text' id='flexible-services-h2'>Flexible Services</h2>
                 <p className='flexible-services-bottom-headings white-text'>Humanitarian</p>
@@ -19,6 +19,6 @@ export default function FlexibleServices(){
             <div className="flexible-services-red red-background flex align-bottom">
                 <p className='flexible-services-bottom-headings white-text'>Government</p>
             </div>
-        </div>
+        </section>
     )
 }

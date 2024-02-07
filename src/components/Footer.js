@@ -3,7 +3,7 @@ import '../index.css'
 
 export default function Footer(){
     return(
-        <div className='footer-container grid black-background'>
+        <footer className='footer-container grid black-background'>
             <a className='footer-a-logo' href='#'><object className='footerSVG' data="./images/footer-logo.svg" alt="logo"></object></a>
             <div id="footer-left-column">
                 <nav className='footer-nav'>
@@ -31,6 +31,6 @@ export default function Footer(){
                     </ul>
                 </nav>
             </div>
-        </div>
+        </footer>
     )
 }

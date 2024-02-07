@@ -3,7 +3,7 @@ import '../index.css'
 
 export default function Contact(){
     return(
-        <div className="contact-container flex">
+        <section className="contact-container flex">
              <div className='contact-left-section light-black'>
                 <form action="./FormAction.php"  method="post" className="flex" id="contact-page-contact-form" >
                         <h2 className=' outfit bold white-text text-center' id="contact-left-section-heading">Send us a message</h2>
@@ -36,7 +36,7 @@ export default function Contact(){
             <div className='contact-right-section'>
             <svg width="1366" height="768" viewBox="0 0 1366 768" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="1366" height="768" fill="#1E1E1E"/>
-<g id="Untitled design (1) 1" clip-path="url(#clip0_0_1)">
+<g id="Untitled design (1) 1" clipPath="url(#clip0_0_1)">
 <ellipse id="background" cx="565.953" cy="394.606" rx="415.331" ry="301" transform="rotate(24 565.953 394.606)" fill="url(#paint0_linear_0_1)"/>
 <g id="tail">
 <g id="tail_2">
@@ -152,8 +152,8 @@ export default function Contact(){
 </g>
 <defs>
 <linearGradient id="paint0_linear_0_1" x1="565.953" y1="93.6061" x2="565.953" y2="695.606" gradientUnits="userSpaceOnUse">
-<stop stop-color="#8B3232"/>
-<stop offset="1" stop-color="#8B3232" stop-opacity="0"/>
+<stop stopColor="#8B3232"/>
+<stop offset="1" stopColor="#8B3232" stopOpacity="0"/>
 </linearGradient>
 <clipPath id="clip0_0_1">
 <rect width="1366" height="768" fill="white"/>
@@ -161,6 +161,6 @@ export default function Contact(){
 </defs>
             </svg>
             </div>
-        </div>
+        </section>
     )
 }

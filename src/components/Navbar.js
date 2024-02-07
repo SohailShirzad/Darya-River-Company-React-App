@@ -2,7 +2,7 @@ import '../App.css';
 export default function Navbar(){
     const contact = "Get in touch";
     return(
-        <div>
+        <section className='display-animate'>
             <div className="rectangle"></div>
             <header className="header">
                 <nav className="flex headerNav">
@@ -23,6 +23,6 @@ export default function Navbar(){
             </header>
            
 
-        </div>
+        </section>
     )
 }
