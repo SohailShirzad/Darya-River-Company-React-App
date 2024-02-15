@@ -10,9 +10,6 @@ import Footer from './components/Footer'
 import Contact from './components/Contact';
 
 function App() {
-
-  console.log("2");
-
   return (
     <div className="App">
       <div className="content">

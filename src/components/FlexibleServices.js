@@ -9,12 +9,7 @@ export default function FlexibleServices(){
                 <p className='flexible-services-bottom-headings white-text'>Humanitarian</p>
             </div>
             <div className="flexible-services-image flex align-bottom">
-                <div className='flexible-image-heading-background'>
-                    <p className='flexible-services-bottom-headings white-text'>Commercial</p>
-                </div>
-               
-               
-                
+                <p className='flexible-services-bottom-headings white-text'>Commercial</p>
             </div>
             <div className="flexible-services-red red-background flex align-bottom">
                 <p className='flexible-services-bottom-headings white-text'>Government</p>
