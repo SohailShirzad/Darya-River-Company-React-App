@@ -1,16 +1,27 @@
+/* to disable scroll bar for mobile design */
+.scroll-disabled{overflow: hidden;}
+
 /* Navbar */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: var(--red);
+    transform-origin: 0%;
+    z-index: 1;
+  }
 .header{
     background: url("../public/images/dog2.png");
     background-repeat: no-repeat;
     background-position:center;
     background-size: cover;
     height: 931px;
-
-
 }
-.width-60{width: 60%;}
+.nav-width-60{width: 60%;}
 
-.width-40{width: 40%;}
+.nav-width-40{width: 40%;}
 
 
 .headerSVG{
@@ -33,15 +44,33 @@
     z-index: 1;
     
 }
-.headerList{
+.nav-links{
     overflow: hidden;
     margin-top: 40px;
     gap:2rem;
     font-size: 1rem;
     font-family: 'Kavivanar', sans-serif;
 }
-.headerList a{color: #fff; font-size: 1.3rem;}
-.nav-btn, .nav-btn-label {display: none;}
+.nav-links a{color: #fff; font-size: 1.3rem;}
+
+.nav-btn {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.bar{
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+}
 
 
 /* Main Section Text */
@@ -299,69 +328,70 @@
 @media only screen and (max-width: 576px) {
 
     /* Navbar */
-.header{
-    background: url("../public/images/dog2.png");
-    background-repeat: no-repeat;
-    background-position:center;
-    background-size: cover;
-    height: 931px;
-
-
-}
-
-.nav-btn {
-    display: inline-block;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-  }
-.width-60{width: 60%;}
-
-.width-40{width: 40%;}
-
-
-.headerSVG{
-    width: 45%;
-}
 
 .rectangle{
-    width: 100%;
-    z-index: 0;
-    max-height: 216px;
-    min-height: 216px;
+    max-height: 4rem; 
+    min-height: 3rem;
+}
+
+.header{
+    background-position: center;
+    background-size: cover;
+    max-height: 20rem;
+}
+.nav-width-40{display: none; }
+.get-in-touch{left: 55%; top: 60%;}
+.nav-btn{display: flex;}
+
+.nav-btn-active span:nth-child(1),.nav-btn-active span:nth-child(2){
+    top: 1rem;
+    background-color: #FF1A1A;
     position: absolute;
-    opacity: 10%;
-    background-color: #d2d2d2;
+}
+.nav-btn-active span:nth-child(1){rotate: 45deg;}
+.nav-btn-active span:nth-child(2){rotate: 135deg;}
+.nav-btn-active span:nth-child(3){display: none;}
+
+
+.nav-width-40.active{
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    transition: 0.5s;
+    position: fixed;
+    z-index: 0;
 }
 
 .headerNav{
     overflow: hidden;
     position: relative;
-    z-index: 1;
-    
+    z-index: 1;   
 }
-.headerList{
-    overflow: hidden;
-    margin-top: 40px;
-    gap:2rem;
-    font-size: 1rem;
-    font-family: 'Kavivanar', sans-serif;
+
+.headerNav{
+    flex-direction: column; 
+    align-items: 
+    flex-start;
 }
-.headerList a{color: #fff; font-size: 1.3rem;}
+.nav-links{
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 6rem;
+}
 
 
 
-
-
-    /* Contact section */
-    .contact-container{
-        flex-direction: column;
-        width: 100%;
-        /* height: 400px; */
-    }
-    .contact-left-section {width: 100%;}
-    .contact-right-section{width: 100%;}
-    .contact-right-section svg{max-width: 100%;height: 100%;}
+/* Contact section */
+.contact-container{
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+}
+.contact-left-section {width: 100%;}
+.contact-right-section{width: 100%;}
+.contact-right-section svg{max-width: 100%;height: 100%;}
   }
 
 
@@ -403,8 +433,37 @@
 
 
 /* Our team section */
-
 @media only screen and (max-width: 576px) {
     .our-team-container{flex-direction: column; align-items: center;}
+}
+
+/* For peace of mind section */
+
+@media only screen and (max-width: 576px) {
+    .peace-of-mind-container{flex-direction: column; height: fit-content;}
+    .peace-of-mind-left-section{width: 100%;}
+    .peace-of-mind-right-section{width: 100%; height: 14rem;}
+    #for-peace-of-mind-title{font-size: 2rem}
+    #for-peace-of-mind-bottom-title{font-size: 1.3rem;}
     
+}
+
+/* Get in touch */
+@media only screen and (max-width: 576px) {
+    .get-in-touch-container{height: max-content;}
+    #get-in-touch-h2{font-size: 2rem;}
+    #get-in-touch-paragraph{font-size: 3rem; font-weight: 900;}
+}
+
+/* Footer section */
+@media only screen and (max-width: 576px) {
+ 
+
+    .footer-a-logo{grid-area: 1 / 1 / 2 / 8;}
+
+    #footer-left-column{grid-area: 2 /1 / 3 / 7;}
+    .footer-nav > ul > li , .footer-nav > ul > li > a{font-size: 1rem;}
+    /* .footer-nav > ul > li > a{font-size: 1rem;} */
+    #footer-middle-column{grid-area: 2 / 8 / 2 / 11;}
+    #footer-right-column{grid-area: 3 / 8 / 3 /12;}
 }
