@@ -322,9 +322,8 @@
 
 
 /* Responsive design for extra large screen 1200px */
-
 /* Contact section */
-@media only screen and (max-width: 1200px){
+@media only screen and (min-width: 768px){
     .contact-container{
         width: 100%;
         height: fit-content;
