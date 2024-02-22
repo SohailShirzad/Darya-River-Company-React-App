@@ -320,13 +320,95 @@
     text-decoration: none;
 }
 
+
+/* Responsive design for extra large screen 1200px */
+
+/* Contact section */
+@media only screen and (max-width: 1200px){
+    .contact-container{
+        width: 100%;
+        height: fit-content;
+    }
+    .contact-left-section {width: 45%;}
+    .contact-right-section{width: 55%; background-color:#1E1E1E;}
+    .contact-right-section svg{max-width: 100%;height: 100%;}
+}
+
+/* Flexible servies section */
+@media only screen and (max-width: 1200px) {
+    .flexible-services-section{margin-top: 11rem; justify-content: flex-start;}
+  
+    .flexible-services-black, .flexible-services-image, .flexible-services-red{
+      width: 100%;
+      max-height: 90%;
+    }
+    .flexible-services-image{background-position: center;}
+    #flexible-services-h2{font-size: 3rem; padding-left: 2rem; font-weight: bolder;}
+    .flexible-services-bottom-headings{font-size: 2rem; padding-left: 2rem;}
+  }
+
+
+
+
 /* Responsive design for large screen up to 992px  */
 
+/* header */
+@media only screen and (max-width: 992px){
+   
+}
+
+/* Main section Container */
+@media only screen and (max-width: 992px){
+    .main-section-text-container{display: block;}
+    .main-section-text{font-size: 1.2rem;text-align: left;}
+}
 
 
+/* Main Section */
+@media only screen and (max-width: 992px) {
 
+    .main-section-services-div-container{
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+    }
 
+    .main-section-services-childs{margin: 0 1rem;}
+    .line-div{height: 1px;}
+    #main-section-services-p{margin-bottom: 1.5rem;}
+}
 
+/* Flexible servies section */
+@media only screen and (max-width: 992px) {
+    .flexible-services-section{flex-direction: column; margin-top: 2rem; justify-content: flex-start; height: fit-content;}
+  
+    .flexible-services-black, .flexible-services-image, .flexible-services-red{
+      width: 100%;
+      min-height: 16rem;
+      max-height: 16rem;
+    }
+    .flexible-services-image{background-image: url("../public/images/flexible-service-mobile.png"); background-position: center;}
+    #flexible-services-h2{font-size: 3rem; padding-left: 2rem; font-weight: bolder;}
+    .flexible-services-bottom-headings{font-size: 2rem; padding-left: 2rem;}
+  }
+
+  /* For peace of mind section */
+
+@media only screen and (max-width: 992px) {
+    .peace-of-mind-container{flex-direction: column; height: fit-content;}
+    .peace-of-mind-left-section{width: 100%;}
+    .peace-of-mind-right-section{width: 100%; height: 20rem;}
+    #for-peace-of-mind-title{font-size: 2rem}
+    #for-peace-of-mind-bottom-title{font-size: 1.3rem;}
+    
+}
+
+/* Get in touch */
+@media only screen and (max-width: 992px) {
+    .get-in-touch-container{height: max-content;}
+    #get-in-touch-h2{font-size: 2rem;}
+    #get-in-touch-paragraph{font-size: 3rem; font-weight: 900;}
+}
 
 
 /* Responsive design for medium screen */
@@ -403,51 +485,9 @@
     .contact-right-section svg{max-width: 100%;height: 100%;}
 }
 
-/* Flexible servies section */
-@media only screen and (max-width: 768px) {
-  .flexible-services-section{flex-direction: column; margin-top: 2rem; justify-content: flex-start; height: fit-content;}
-
-  .flexible-services-black, .flexible-services-image, .flexible-services-red{
-    width: 100%;
-    min-height: 16rem;
-    max-height: 16rem;
-  }
-  .flexible-services-image{background-image: url("../public/images/flexible-service-mobile.png");}
-  #flexible-services-h2{font-size: 3rem; padding-left: 2rem; font-weight: bolder;}
-  .flexible-services-bottom-headings{font-size: 2rem; padding-left: 2rem;}
-}
 
 
 
-/* Main section */
-@media only screen and (max-width: 768px) {
-    
-    .main-section-text-container{display: block;}
-    .main-section-text{font-size: 1.2rem;text-align: left;
-    }
-}
-
-
-/* @media only screen and (max-width: 576px) {
-    
-    .main-section-text-container{display: block;}
-    .main-section-text{font-size: 1.2rem;text-align: left;
-    }
-} */
-
-/* Main section services */
-@media only screen and (max-width: 768px) {
-
-    .main-section-services-div-container{
-        margin-top: 5rem;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .main-section-services-childs{margin: 0 1rem;}
-    .line-div{height: 1px;}
-    #main-section-services-p{margin-bottom: 1.5rem;}
-}
 
 
 /* Our team section */
@@ -455,23 +495,6 @@
     .our-team-container{flex-direction: column; align-items: center;}
 }
 
-/* For peace of mind section */
-
-@media only screen and (max-width: 768px) {
-    .peace-of-mind-container{flex-direction: column; height: fit-content;}
-    .peace-of-mind-left-section{width: 100%;}
-    .peace-of-mind-right-section{width: 100%; height: 14rem;}
-    #for-peace-of-mind-title{font-size: 2rem}
-    #for-peace-of-mind-bottom-title{font-size: 1.3rem;}
-    
-}
-
-/* Get in touch */
-@media only screen and (max-width: 768px) {
-    .get-in-touch-container{height: max-content;}
-    #get-in-touch-h2{font-size: 2rem;}
-    #get-in-touch-paragraph{font-size: 3rem; font-weight: 900;}
-}
 
 /* Footer section */
 @media only screen and (max-width: 768px) {
