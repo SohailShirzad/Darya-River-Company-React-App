@@ -9,12 +9,12 @@ const contact = "Get in touch";
 
  // for animation
  const itemVariants={
-    visible:{
+    open:{
         opacity: 1,
         y: 0,
         transition:{type: "spring", stiffness: 300, damping:24}
     },
-    hidden:{
+    closed:{
         opacity: 0,
         y:20,
         transition:{duration:0.2}
@@ -42,37 +42,60 @@ const [isOpen, setIsOpen] = useState(false);
             borderRadius: ["20%", "20%", "50%", "50%", "20%"],
             }} className="rectangle" />
             <header className="header">
-                <m.nav initial={false} animate={isOpen ? "open" : "closed"}className="flex headerNav">
-                    <m.div className='nav-width-60'>
+                <m.nav initial={true} animate={isOpen ? "open" : "closed"}className="flex headerNav">
+                    <div className='nav-width-60'>
                     <a id="header-nav-a-svg" href='#'><object className='headerSVG' data="./images/logo svg.svg" alt="logo"></object></a>
-                    <a class='nav-btn' id='navbar-toggle' onClick={() => {setIsOpen(!isOpen); openNav();}} ref={navBtn}>
+                    <m.a class='nav-btn' id='navbar-toggle' onClick={() => {setIsOpen(!isOpen); openNav();}} ref={navBtn}>
                         <span className='bar'></span>
                         <span className='bar'></span>
                         <span className='bar'></span>
-                    </a>
-                    </m.div>
-                    <div className='nav-width-40' ref={navRef}>
-                    <m.ul 
+                    </m.a>
+                    </div>
+                    <m.div 
                     variants ={{
                         open:{
+                            opacity: 1,
                             transition:{
                                 type: "spring",
                                 bounce: 0,
-                                duration: 0.7,
-                                delayChildren: 0.4,
-                                staggerChildren: 0.05
+                                duration: 0.5,
+                                delayChildren: 0.5,
+                                staggerChildren: 0.3
                             }
                         },
                         closed:{
+                            opacity: 0,
+                            transition:{
+                                type: "spring",
+                                bounce: 1,
+                                duration: 0.2,
+                            }
+                        }
+                    }} 
+                    className='nav-width-40' ref={navRef}
+                    style={{ pointerEvents: isOpen ? "auto" : "none" }}> 
+                    
+                    <m.ul 
+                    variants ={{
+                        open:{
+                            opacity: 1,
                             transition:{
                                 type: "spring",
                                 bounce: 0,
-                                duration: 0.3,
+                                duration: 0.5,
+                                delayChildren: 0.5,
+                                staggerChildren: 0.3
                             }
+                        },
+                        closed:{
+                            opacity: 0,
+                            transition:{
+                                type: "spring",
+                                bounce: 1,
+                                duration: 5,
+                            },
+                            
                         }
-                
-                        
-
                     }} 
                     className='flex nav-links no-bullets'
                     style={{ pointerEvents: isOpen ? "auto" : "none" }}>
@@ -83,7 +106,7 @@ const [isOpen, setIsOpen] = useState(false);
                         <m.li variants={itemVariants}><a className='no-underline bold' href="#">Services</a></m.li>
                     </m.ul>
 
-                    </div>
+                    </m.div>
                 </m.nav>
                 <div className='get-in-touch relative white-text'>{contact}</div>
             </header>

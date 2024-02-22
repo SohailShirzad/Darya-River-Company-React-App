@@ -320,12 +320,18 @@
     text-decoration: none;
 }
 
+/* Responsive design for large screen up to 992px  */
 
-/* Mobile responsive styles */
 
 
-/* Contact section */
-@media only screen and (max-width: 576px) {
+
+
+
+
+
+/* Responsive design for medium screen */
+
+@media only screen and (max-width: 768px) {
 
     /* Navbar */
 
@@ -340,7 +346,11 @@
     max-height: 20rem;
 }
 .nav-width-40{display: none; }
-.get-in-touch{left: 55%; top: 60%;}
+.get-in-touch{
+    left: 61%;
+    top: 60%;
+    position: sticky;
+}
 .nav-btn{display: flex;}
 
 .nav-btn-active span:nth-child(1),.nav-btn-active span:nth-child(2){
@@ -380,23 +390,21 @@
     gap: 1rem;
     margin-top: 6rem;
 }
-
-
-
-/* Contact section */
-.contact-container{
-    flex-direction: column;
-    width: 100%;
-    height: fit-content;
 }
-.contact-left-section {width: 100%;}
-.contact-right-section{width: 100%;}
-.contact-right-section svg{max-width: 100%;height: 100%;}
-  }
-
+/* Contact section */
+@media only screen and (max-width: 768px){
+    .contact-container{
+        flex-direction: column;
+        width: 100%;
+        height: fit-content;
+    }
+    .contact-left-section {width: 100%;}
+    .contact-right-section{width: 100%;}
+    .contact-right-section svg{max-width: 100%;height: 100%;}
+}
 
 /* Flexible servies section */
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   .flexible-services-section{flex-direction: column; margin-top: 2rem; justify-content: flex-start; height: fit-content;}
 
   .flexible-services-black, .flexible-services-image, .flexible-services-red{
@@ -409,16 +417,26 @@
   .flexible-services-bottom-headings{font-size: 2rem; padding-left: 2rem;}
 }
 
+
+
 /* Main section */
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
     
     .main-section-text-container{display: block;}
     .main-section-text{font-size: 1.2rem;text-align: left;
     }
 }
 
+
+/* @media only screen and (max-width: 576px) {
+    
+    .main-section-text-container{display: block;}
+    .main-section-text{font-size: 1.2rem;text-align: left;
+    }
+} */
+
 /* Main section services */
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
 
     .main-section-services-div-container{
         margin-top: 5rem;
@@ -433,13 +451,13 @@
 
 
 /* Our team section */
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
     .our-team-container{flex-direction: column; align-items: center;}
 }
 
 /* For peace of mind section */
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
     .peace-of-mind-container{flex-direction: column; height: fit-content;}
     .peace-of-mind-left-section{width: 100%;}
     .peace-of-mind-right-section{width: 100%; height: 14rem;}
@@ -449,14 +467,14 @@
 }
 
 /* Get in touch */
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
     .get-in-touch-container{height: max-content;}
     #get-in-touch-h2{font-size: 2rem;}
     #get-in-touch-paragraph{font-size: 3rem; font-weight: 900;}
 }
 
 /* Footer section */
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
  
 
     .footer-a-logo{grid-area: 1 / 1 / 2 / 8;}
@@ -467,3 +485,6 @@
     #footer-middle-column{grid-area: 2 / 8 / 2 / 11;}
     #footer-right-column{grid-area: 3 / 8 / 3 /12;}
 }
+
+
+/* Mobile Design */
