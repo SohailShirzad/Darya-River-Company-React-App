@@ -1,5 +1,6 @@
 import '../App.css'
 import '../index.css'
+import Reveal from './Reveal'
 
 export default function Footer(){
     return(
@@ -13,7 +14,9 @@ export default function Footer(){
                         <li>Email: info@drdta.com</li>
                     </ul>
                 </nav>
+               
             </div>
+            
             <div id="footer-middle-column">
                 <nav className='footer-nav'>
                     <ul>
@@ -24,12 +27,13 @@ export default function Footer(){
                 </nav>
             </div>
             <div id="footer-right-column">
-                 <nav className='footer-nav'>
+                <nav className='footer-nav'>
                     <ul>
                         <li><a href="#">Our Services</a></li>
                         <li><a href="#">Projects</a></li>
                     </ul>
                 </nav>
+            
             </div>
         </footer>
     )

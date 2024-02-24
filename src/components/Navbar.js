@@ -42,7 +42,7 @@ const [isOpen, setIsOpen] = useState(false);
             borderRadius: ["20%", "20%", "50%", "50%", "20%"],
             }} className="rectangle" />
             <header className="header">
-                <m.nav initial={true} animate={isOpen ? "open" : "closed"}className="flex headerNav">
+                <m.nav animate={isOpen ? "open" : "closed"}className="flex headerNav">
                     <div className='nav-width-60'>
                     <a id="header-nav-a-svg" href='#'><object className='headerSVG' data="./images/logo svg.svg" alt="logo"></object></a>
                     <m.a class='nav-btn' id='navbar-toggle' onClick={() => {setIsOpen(!isOpen); openNav();}} ref={navBtn}>
@@ -52,6 +52,7 @@ const [isOpen, setIsOpen] = useState(false);
                     </m.a>
                     </div>
                     <m.div 
+                    initial={true} animate={isOpen ? "open" : "closed"}
                     variants ={{
                         open:{
                             opacity: 1,
@@ -76,6 +77,7 @@ const [isOpen, setIsOpen] = useState(false);
                     style={{ pointerEvents: isOpen ? "auto" : "none" }}> 
                     
                     <m.ul 
+                    initial={false} animate={isOpen ? "open" : "closed"}
                     variants ={{
                         open:{
                             opacity: 1,
@@ -100,10 +102,10 @@ const [isOpen, setIsOpen] = useState(false);
                     className='flex nav-links no-bullets'
                     style={{ pointerEvents: isOpen ? "auto" : "none" }}>
       
-                        <m.li variants={itemVariants}><a className='no-underline bold' href="#">Home</a></m.li>
-                        <m.li variants={itemVariants}><a className='no-underline bold' href="#">About us</a></m.li>
-                        <m.li variants={itemVariants}><a className='no-underline bold' href="#">Contact</a></m.li>
-                        <m.li variants={itemVariants}><a className='no-underline bold' href="#">Services</a></m.li>
+                        <m.li className='nav-li' variants={itemVariants}><a className='no-underline bold' href="#">Home</a></m.li>
+                        <m.li  className='nav-li' variants={itemVariants}><a className='no-underline bold' href="#">About us</a></m.li>
+                        <m.li className='nav-li'  variants={itemVariants}><a className='no-underline bold' href="#">Contact</a></m.li>
+                        <m.li className='nav-li'  variants={itemVariants}><a className='no-underline bold' href="#">Services</a></m.li>
                     </m.ul>
 
                     </m.div>

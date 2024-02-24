@@ -8,12 +8,14 @@ import PeaceOfMind from './components/PeaceOfMind'
 import GetInTouch from './components/GetInTouch'
 import Footer from './components/Footer'
 import Contact from './components/Contact';
+import Reveal from './components/Reveal';
+
 
 function App() {
   return (
     <div className="App">
       <div className="content">
-        <Navbar />
+       <Reveal><Navbar /></Reveal>
         <MainSection />
         <div className='grid main-section-services-div-container'>
           <MainSectionServices
@@ -37,35 +39,36 @@ function App() {
             description = "Descriptionshould be added here so we can meijislirdfierksierlskjr." 
           />
         </div>
-        <FlexibleServiecs />
+        <Reveal><FlexibleServiecs /></Reveal>
         <h2 id='our-team-heading'>Our Team</h2>
         <div className='flex our-team-container'>
           <OurTeam
             img = '/images/profilePhotoTemp.jpg' 
             name = "Sohail"
             title = "Software Engineer"
-            email = "mailto: sohail_shirzad@hotmail.com"
-            tel = "tel: 07961977725"
+            email = "sohail_shirzad@hotmail.com"
+            tel = "07961977725"
           />
           <OurTeam
             img = '/images/profilePhotoTemp.jpg' 
             name = "Rahmatullah Shirzaei"
             title = "CEO"
-            email = "mailto: sohail_shirzad@hotmail.com"
-            tel = "tel: 07961977725"
+            email = "sohail_shirzad@hotmail.com"
+            tel = "07961977725"
           />
           <OurTeam
             img = '/images/profilePhotoTemp.jpg' 
             name = "Isa Shirzaei"
             title = "Director"
-            email = "mailto: sohail_shirzad@hotmail.com"
-            tel = "tel: 07961977725"
+            email = "sohail_shirzad@hotmail.com"
+            tel = "07961977725"
           />
-        </div>       
-        <PeaceOfMind />
+        </div>      
+        <Reveal><PeaceOfMind /></Reveal> 
+        {/* <PeaceOfMind /> */}
         <GetInTouch />
-        <Contact />
-        <Footer />
+        <Reveal><Contact /></Reveal>
+        <Reveal><Footer /></Reveal>
       </div>
     </div>
   );

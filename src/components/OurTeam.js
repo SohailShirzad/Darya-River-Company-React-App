@@ -1,6 +1,6 @@
 import '../App.css'
 import '../index.css'
-// import photo from '../public/images/profilePhotoTemp.jpg'
+import Reveal from './Reveal'
 
 export default function OurTeam(props){
     return(
@@ -8,7 +8,7 @@ export default function OurTeam(props){
                 <div className="our-team-image-wrapper">
                     <img className='our-team-image' src={props.img} alt="profile" />
                 </div>
-                <p className='our-team-name-text bold outfit'>{props.name}</p>
+                <Reveal><p className='our-team-name-text bold outfit'>{props.name}</p></Reveal>
                 <p className="our-team-position-text red-text bold">{props.title}</p>
                 <div className="our-team-social-icons flex align-bottom">
                     <a className='our-team-a-icons' href={props.email}>
