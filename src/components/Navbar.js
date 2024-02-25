@@ -74,7 +74,8 @@ const [isOpen, setIsOpen] = useState(false);
                         }
                     }} 
                     className='nav-width-40' ref={navRef}
-                    style={{ pointerEvents: isOpen ? "auto" : "none" }}> 
+                    // style={{ pointerEvents: isOpen ? "auto" : "none" }}
+                    > 
                     
                     <m.ul 
                     initial={false} animate={isOpen ? "open" : "closed"}
@@ -100,7 +101,8 @@ const [isOpen, setIsOpen] = useState(false);
                         }
                     }} 
                     className='flex nav-links no-bullets'
-                    style={{ pointerEvents: isOpen ? "auto" : "none" }}>
+                    // style={{ pointerEvents: isOpen ? "auto" : "none" }}
+                    >
       
                         <m.li className='nav-li' variants={itemVariants}><a className='no-underline bold' href="#">Home</a></m.li>
                         <m.li  className='nav-li' variants={itemVariants}><a className='no-underline bold' href="#">About us</a></m.li>
@@ -110,7 +112,7 @@ const [isOpen, setIsOpen] = useState(false);
 
                     </m.div>
                 </m.nav>
-                <div className='get-in-touch relative white-text'>{contact}</div>
+                <div className='get-in-touch relative white-text'><a className='get-in-touchbtn white-text'>{contact}</a></div>
             </header>
            
 

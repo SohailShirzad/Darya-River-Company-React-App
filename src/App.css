@@ -48,7 +48,13 @@
 }
 .nav-links a{color: #fff; font-size: 1.3rem;}
 
-/* .nav-links a{border-bottom: 1px solid #FF1A1A; position: relative; z-index: 4;} */
+.nav-links a:hover{
+    border-bottom: 4px solid #FF1A1A; 
+    border-radius: 7px;
+    position: relative; 
+    z-index: 4;
+    cursor: pointer;
+}
 
 .nav-btn {
     display: none;

@@ -1,6 +1,5 @@
 import '../App.css'
 import '../index.css'
-import Reveal from './Reveal'
 
 export default function Footer(){
     return(

@@ -1,35 +1,83 @@
+
+import {React , useRef, useState} from 'react'
 import '../App.css'
 import '../index.css'
+import { useId } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
+   const [name, setName] = useState("");
+   const [phone, setPhone] = useState("");
+   const [email, setEmail] = useState("");
+   const [description, setDescription] = useState("");
+   const id = useId();
+   const form = useRef();
+
+   function handleNameChange(event){
+    const value = event.target.value;
+    setName(value);
+   }
+   function handleSetPhoneChange(event){
+    const value = event.target.value;
+    setPhone(value);
+   }
+
+   function handleSetEmailChange(event){
+    const value = event.target.value;
+    setEmail(value);
+   }
+
+   function handleSetDescriptionChange(event){
+    const value = event.target.value;
+    setDescription(value);
+   }
+
+   const formData = [name, phone, email, description];
+
+   function handleSubmit(event){
+    event.preventDefault();
+    emailjs
+    .sendForm('service_nr1vkos', 'template_zs8kkph', form.current, {
+        publicKey: 'WEt2w76hRwRFGYvZo'
+    })
+    .then(
+        () => {
+            console.log('SUCCESS');
+        },
+        (error) =>{
+            console.log('FAILED', error.text);
+        },
+    );
+   };
+
     return (
         <section className="contact-container flex">
             <div className='contact-left-section light-black'>
-                <form action="./FormAction.php" method="post" className="flex" id="contact-page-contact-form" >
+                <form ref={form} onSubmit={handleSubmit} className="flex" id="contact-page-contact-form" >
                     <h2 className=' outfit bold white-text text-center' id="contact-left-section-heading">Send us a message</h2>
                     <div className="input-container">
                         <span className="material-symbols-outlined">person</span>
-                        <input type="text" id="Name" name="name" placeholder="Name ..." required />
+                        <input type="text" id={id + 'name'} name="name" placeholder="Name ..." onChange={handleNameChange} value={name} aria-label='name' required />
                     </div>
 
                     <div className="input-container">
                         <span className="material-symbols-outlined">call</span>
-                        <input type="tel" id="Phone" name="phone" placeholder="Phone Number ..." required />
+                        <input type="tel" id={id + 'phone'} name="phone" placeholder="Phone Number ..." onChange={handleSetPhoneChange} value={phone} aria-label='phone' required />
                     </div>
 
                     <div className="input-container">
                         <span className="material-symbols-outlined">mail</span>
-                        <input type="email" id="Email" name="email" placeholder="Email ..." required />
+                        <input type="email" id={id + 'email'} name="email" placeholder="Email ..." onChange={handleSetEmailChange} value={email} aria-label='email' required />
 
                     </div>
 
                     <div className="input-container">
                         <span className="material-symbols-outlined">description</span>
-                        <textarea type="text" id="Message" name="message" placeholder="Message..." required></textarea>
+                        <textarea type="text" id={id + 'description'} name="description" placeholder="Message..." onChange={handleSetDescriptionChange} value={description} aria-label='text-input' required></textarea>
 
                     </div>
 
-                    <input className='outfit bold' type="submit" id="Submit-button" value="Submit" />
+                    <button className='outfit bold'  id="Submit-button">Submit</button>
 
                 </form>
             </div>

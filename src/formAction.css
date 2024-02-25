@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom, #192851 46%, #5340fe 86%);
+  }
+  
+.fromActionFeedback{
+
+    text-align: center;
+    border: 1px solid #5340fe;
+    width: 50%;
+    margin: 10% 0 0 25%;
+}
+
+p{
+
+    color:white;
+    font-size: 26px;
+}
+
+h1{
+    color:#19d3c5;
+
+}
+
+a{
+    color:#19d3c5;
+
+}
+
+@media screen and (max-width: 950px) {
+
+    h1{
+        font-size: 26px;
+    }
+
+    .fromActionFeedback{
+        width: 90%;
+        margin: 5% 0 0 5%;
+    }
+    
+}
