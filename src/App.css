@@ -206,16 +206,17 @@
 
 #contact-page-contact-form {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1.5rem;
     margin-top: 1rem;
 }
 
 .input-container {
     margin-top: 0.2rem;
-    display: inline-flex;
-    gap: 0.5rem;
-    justify-content: center;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
 }
+.input-container div{width: 70%; display: flex; gap: 0.5rem;}
 
 .material-symbols-outlined {
     color: white;
@@ -224,12 +225,12 @@
 
 
 .input-container textarea {
-    width: 70%;
+    width: 100%;
     height: 150px;
 }
 
 .input-container input, textarea {
-    width: 70%;
+    width: 100%;
     border: none;
     background-color: #1E1E1E;
     outline: none;
@@ -275,6 +276,17 @@
     50%{transform: skewY(20deg);}
     to{transform: skewY(0deg);}
 }
+
+.error {
+    margin-top: 0.4rem;
+    color: red;
+    width: 63%;
+    font-size: 1.2rem;
+  }
+  .success {
+    font-size: 20px;
+    color: rgb(75, 181, 67);
+  }
 
 
 /* Footer section */
@@ -404,12 +416,16 @@
     .flexible-services-bottom-headings{font-size: 2rem; padding-left: 2rem;}
   }
 
-
-
+  /* Contact */
+  @media only screen and (max-width: 1200px){
+    .error {
+        color: red;
+        width: 57%;
+        font-size: 1.2rem;
+      }
+  }
 
 /* Responsive design for large screen up to 992px  */
-
-
 /* Main section Container */
 @media only screen and (max-width: 992px){
     .main-section-text-container{display: block;}
@@ -463,6 +479,15 @@
     #get-in-touch-paragraph{font-size: 3rem; font-weight: 900;}
 }
 
+  /* Contact */
+  @media only screen and (max-width: 992px){
+    .error {
+        color: red;
+        width: 54%;
+        font-size: 1rem;
+      }
+  }
+
 
 /* Responsive design for medium screen */
 
@@ -476,12 +501,12 @@
     .contact-left-section {width: 100%;}
     .contact-right-section{width: 100%;}
     .contact-right-section svg{max-width: 100%;height: 100%;}
+    .error {
+        color: red;
+        width: 56%;
+        font-size: 1rem;
+      }
 }
-
-
-
-
-
 
 /* Our team section */
 @media only screen and (max-width: 768px) {
@@ -501,6 +526,4 @@
     #footer-middle-column{grid-area: 2 / 8 / 2 / 11;}
     #footer-right-column{grid-area: 3 / 8 / 3 /12;}
 }
-
-
 /* Mobile Design */

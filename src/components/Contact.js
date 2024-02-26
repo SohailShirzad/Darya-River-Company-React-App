@@ -1,81 +1,124 @@
 
-import {React , useRef, useState} from 'react'
+import {React , useRef, useState, useEffect} from 'react'
 import '../App.css'
 import '../index.css'
 import { useId } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate,  } from 'react-router-dom';
+import Success from './Success'
 import emailjs from '@emailjs/browser';
 
 export default function Contact() {
-   const [name, setName] = useState("");
-   const [phone, setPhone] = useState("");
-   const [email, setEmail] = useState("");
-   const [description, setDescription] = useState("");
-   const id = useId();
-   const form = useRef();
+    const id = useId();
+    const form = useRef();
+    const [errors, setErrors] = useState({});
+    const[success, SetSuccess] = useState(false);
 
-   function handleNameChange(event){
-    const value = event.target.value;
-    setName(value);
-   }
-   function handleSetPhoneChange(event){
-    const value = event.target.value;
-    setPhone(value);
-   }
+    const [formData, setFormData] = useState(
+        {name: "", phone: "", email: "", description: ""}
+    );
 
-   function handleSetEmailChange(event){
-    const value = event.target.value;
-    setEmail(value);
-   }
 
-   function handleSetDescriptionChange(event){
-    const value = event.target.value;
-    setDescription(value);
-   }
+    const validValues = (inputValues) =>{
+        let errors = {};
+        if (inputValues.name.trim().length === 0){
+            errors.name = "Name is required";
+        }else if(inputValues.name.trim().length > 50){
+            errors.name = "Name is too long"
+        }
+        if (inputValues.phone.trim().length < 10){
+            errors.phone = "Phone is not valid. i.e 07961988873";
+        };
+        if (!inputValues.email.trim()){
+            errors.email = "Email is required";
+        }else if(!/\S+@\S+\.\S+/.test(inputValues.email)){
+            errors.email = "Email is not valid";
+        };
+        if (inputValues.description.trim().length > 50 || inputValues.description.trim().length < 8 ){
+            errors.description = "Description should be greather than 8 and less than 50 characters";
+        }
+        return errors;
+    };
 
-   const formData = [name, phone, email, description];
+
+    function handleChange(event){
+        setFormData(prevFormData =>{
+            return{
+                ...prevFormData,
+                [event.target.name]: event.target.value
+            }
+        })
+    }
 
    function handleSubmit(event){
     event.preventDefault();
-    emailjs
-    .sendForm('service_nr1vkos', 'template_zs8kkph', form.current, {
-        publicKey: 'WEt2w76hRwRFGYvZo'
-    })
-    .then(
-        () => {
-            console.log('SUCCESS');
-        },
-        (error) =>{
-            console.log('FAILED', error.text);
-        },
-    );
+    setErrors(validValues(formData));
+    SetSuccess(true);
    };
 
+   console.log(success);
+
+   useEffect(() => {
+    if (Object.keys(errors).length === 0 && success) {
+        // SetSuccess(true);
+        // return<Navigate to ="/success" />
+        sendEmail();
+    }},[errors]);
+
+  const sendEmail = () => {  
+//   emailjs
+//   .sendForm('service_nr1vkos', 'template_zs8kkph', form.current, {
+//       publicKey: 'WEt2w76hRwRFGYvZo'
+//   })
+//   .then(
+//       () => {
+//           console.log('SUCCESS');
+//       },
+//       (error) =>{
+//           console.log('FAILED', error.text);
+//       },
+//   );
+}
+
     return (
+        
         <section className="contact-container flex">
             <div className='contact-left-section light-black'>
-                <form ref={form} onSubmit={handleSubmit} className="flex" id="contact-page-contact-form" >
+                <form ref={form} onSubmit={handleSubmit} className="flex" id="contact-page-contact-form"autoComplete='off'>
                     <h2 className=' outfit bold white-text text-center' id="contact-left-section-heading">Send us a message</h2>
                     <div className="input-container">
-                        <span className="material-symbols-outlined">person</span>
-                        <input type="text" id={id + 'name'} name="name" placeholder="Name ..." onChange={handleNameChange} value={name} aria-label='name' required />
+                        <div>
+                            <span className="material-symbols-outlined">person</span>
+                            <input type="text" id={id + 'name'} name="name" placeholder="Name ..." onChange={handleChange} value={formData.name} aria-label='name'
+                            style ={{border: errors.name ? "1px solid gray": null}}/>
+                        </div>
+                        {errors.name ? (<p className='error'>{errors.name}</p>): null}
                     </div>
-
                     <div className="input-container">
-                        <span className="material-symbols-outlined">call</span>
-                        <input type="tel" id={id + 'phone'} name="phone" placeholder="Phone Number ..." onChange={handleSetPhoneChange} value={phone} aria-label='phone' required />
+                        <div>
+                            <span className="material-symbols-outlined">call</span>
+                            <input type="tel" id={id + 'phone'} name="phone" placeholder="Phone Number ..." onChange={handleChange} value={formData.phone} aria-label='phone'
+                            style ={{border: errors.email ? "1px solid gray": null}}/>
+                        </div>
+                        {errors.phone ? (<p className='error'>Please enter a valid phone</p>): null}
                     </div>
-
                     <div className="input-container">
-                        <span className="material-symbols-outlined">mail</span>
-                        <input type="email" id={id + 'email'} name="email" placeholder="Email ..." onChange={handleSetEmailChange} value={email} aria-label='email' required />
-
+                        <div>
+                            <span className="material-symbols-outlined">mail</span>
+                            <input type="email" id={id + 'email'} name="email" placeholder="Email ..." onChange={handleChange}  value={formData.email} aria-label='email'
+                            style ={{border: errors.email ? "1px solid gray": null}}/>
+                        </div>
+                        {errors.email ? (<p className='error'>{errors.email}</p>): null}
                     </div>
-
                     <div className="input-container">
-                        <span className="material-symbols-outlined">description</span>
-                        <textarea type="text" id={id + 'description'} name="description" placeholder="Message..." onChange={handleSetDescriptionChange} value={description} aria-label='text-input' required></textarea>
-
+                        <div>
+                            <span className="material-symbols-outlined">description</span>
+                            <textarea type="text" id={id + 'description'} name="description" placeholder="Message..." onChange={handleChange} value={formData.description} aria-label='text-input'
+                            style ={{border: errors.description ? "1px solid gray": null}}>
+                             </textarea>
+                        </div>
+                        {errors.description ? (<p className='error'>{errors.description}</p>): null}
                     </div>
+                    
 
                     <button className='outfit bold'  id="Submit-button">Submit</button>
 
@@ -209,6 +252,22 @@ export default function Contact() {
                     </defs>
                 </svg>
             </div>
+
+            <div className='Form-submit'>{Object.keys(errors).length === 0 && success ? (
+                <p>swdsd</p>
+                
+            ): null}
+            </div>
         </section>
     )
+    // {Object.keys(errors).length === 0 && success ?(
+    //     <Router>
+    //     <Routes>
+    //         <Route
+    //             path='/success'
+    //             element={<Success />} 
+    //         />
+    //     </Routes>
+    //     </Router>
+    // ):null}
 }
