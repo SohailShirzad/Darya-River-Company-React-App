@@ -19,17 +19,17 @@ export default function Footer(){
             <div id="footer-middle-column">
                 <nav className='footer-nav'>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href='#home'>Home</a></li>
+                        <li><a href="#about">About us</a></li>
+                        <li><a href='#contact'>Contact</a></li>
                     </ul>
                 </nav>
             </div>
             <div id="footer-right-column">
                 <nav className='footer-nav'>
                     <ul>
-                        <li><a href="#">Our Services</a></li>
-                        <li><a href="#">Projects</a></li>
+                        <li><a href="#service">Our Services</a></li>
+                        {/* <li><a href="#contact">Projects</a></li> */}
                     </ul>
                 </nav>
             

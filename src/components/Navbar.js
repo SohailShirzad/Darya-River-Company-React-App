@@ -3,7 +3,7 @@ import { motion as m, useScroll, Variant} from "framer-motion"
 import '../App.css';
 export default function Navbar(){
 
-    const navRef = useRef();
+const navRef = useRef();
 const navBtn = useRef();
 const contact = "Get in touch";
 
@@ -31,7 +31,7 @@ const [isOpen, setIsOpen] = useState(false);
         
       }
     return(
-        <section className='display-animate'>
+        <section id='home' className='display-animate'>
             <m.div
                 className="progress-bar"
                 style={{ scaleX: scrollYProgress }}
@@ -103,11 +103,11 @@ const [isOpen, setIsOpen] = useState(false);
                     className='flex nav-links no-bullets'
                     // style={{ pointerEvents: isOpen ? "auto" : "none" }}
                     >
-      
+                        
                         <m.li className='nav-li' variants={itemVariants}><a className='no-underline bold' href="#">Home</a></m.li>
-                        <m.li  className='nav-li' variants={itemVariants}><a className='no-underline bold' href="#">About us</a></m.li>
-                        <m.li className='nav-li'  variants={itemVariants}><a className='no-underline bold' href="#">Contact</a></m.li>
-                        <m.li className='nav-li'  variants={itemVariants}><a className='no-underline bold' href="#">Services</a></m.li>
+                        <m.li  className='nav-li' variants={itemVariants}><a href="#our-team-heading" className='no-underline bold'>About us</a></m.li>
+                        <m.li className='nav-li'  variants={itemVariants}><a  href='#contact' className='no-underline bold' >Contact</a></m.li>
+                        <m.li className='nav-li'  variants={itemVariants}><a href='#services' className='no-underline bold' >Services</a></m.li>
                     </m.ul>
 
                     </m.div>

@@ -9,6 +9,7 @@
     color: var(--black);
     font-size: 16px;
 }
+html{scroll-behavior: smooth;}
 .light-black{background-color: var(--light-black);}
 .black-background{background-color: var(--black);}
 .red-background{background-color: var(--red);}

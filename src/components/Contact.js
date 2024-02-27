@@ -60,7 +60,7 @@ export default function Contact() {
    useEffect(() => {
     if (Object.keys(errors).length === 0 && success) {
         // SetSuccess(true);
-        // return<Navigate to ="/success" />
+        // return<Navigate to="/success" />
         sendEmail();
     }},[errors]);
 
@@ -81,7 +81,7 @@ export default function Contact() {
 
     return (
         
-        <section className="contact-container flex">
+        <section id='contact' className="contact-container flex">
             <div className='contact-left-section light-black'>
                 <form ref={form} onSubmit={handleSubmit} className="flex" id="contact-page-contact-form"autoComplete='off'>
                     <h2 className=' outfit bold white-text text-center' id="contact-left-section-heading">Send us a message</h2>

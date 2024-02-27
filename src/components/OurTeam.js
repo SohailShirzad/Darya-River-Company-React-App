@@ -4,7 +4,7 @@ import Reveal from './Reveal'
 
 export default function OurTeam(props){
     return(
-            <section className="our-team-cards flex column-direction align-center justify-center">
+            <section id="about" className="our-team-cards flex column-direction align-center justify-center">
                 <div className="our-team-image-wrapper">
                     <img className='our-team-image' src={props.img} alt="profile" />
                 </div>
