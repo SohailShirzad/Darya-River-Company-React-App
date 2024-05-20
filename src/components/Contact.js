@@ -1,127 +1,143 @@
-
-import {React , useRef, useState, useEffect} from 'react'
 import '../App.css'
 import '../index.css'
-import { useId } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate,  } from 'react-router-dom';
-import Success from './Success'
+import { useNavigate, createSearchParams } from 'react-router-dom';
+import { useFormik } from 'formik'
+import * as Yup from "yup";
+import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
+
 export default function Contact() {
-    const id = useId();
+    const navigate = useNavigate();
     const form = useRef();
-    const [errors, setErrors] = useState({});
-    const[success, SetSuccess] = useState(false);
 
-    const [formData, setFormData] = useState(
-        {name: "", phone: "", email: "", description: ""}
-    );
+    // Formik login here
+    const formik = useFormik({
+        initialValues: {
+            name: "",
+            phone: "",
+            email: "",
+            message: "",
+        },
 
+        // Validation
 
-    const validValues = (inputValues) =>{
-        let errors = {};
-        if (inputValues.name.trim().length === 0){
-            errors.name = "Name is required";
-        }else if(inputValues.name.trim().length > 50){
-            errors.name = "Name is too long"
-        }
-        if (inputValues.phone.trim().length < 10){
-            errors.phone = "Phone is not valid. i.e 07961988873";
-        };
-        if (!inputValues.email.trim()){
-            errors.email = "Email is required";
-        }else if(!/\S+@\S+\.\S+/.test(inputValues.email)){
-            errors.email = "Email is not valid";
-        };
-        if (inputValues.description.trim().length > 50 || inputValues.description.trim().length < 8 ){
-            errors.description = "Description should be greather than 8 and less than 50 characters";
-        }
-        return errors;
-    };
+        validationSchema: Yup.object({
+            name: Yup.string()
+                .max(30, 'Name must be 30 characters or less.')
+                .required('Name is required!'),
+            phone: Yup.string()
+                .max(13, 'Phone must be 13 characters or less.')
+                .required('Phone is required!'),
+            email: Yup.string()
+                .email('Invalid email address!')
+                .required('Email is required!'),
+            message: Yup.string()
+                .max(70, 'Message must be 100 characters or less.')
+                .required("Message is required")
+        }),
 
+        // for submit form
+        onSubmit: (values) => {
+            console.log(values);
+            const options = {
+                pathname: "/success",
+                search: (`?${createSearchParams(values)}`)
 
-    function handleChange(event){
-        setFormData(prevFormData =>{
-            return{
-                ...prevFormData,
-                [event.target.name]: event.target.value
             }
-        })
+            // console.log(setSearchParams);
+            sendEmail();
+            window.scrollTo(0, 0);
+            navigate(options);
+        }
+    });
+
+
+
+
+    const sendEmail = () => {
+        //   emailjs
+        //   .sendForm('service_nr1vkos', 'template_zs8kkph', form.current, {
+        //       publicKey: 'WEt2w76hRwRFGYvZo'
+        //   })
+        //   .then(
+        //       () => {
+        //           console.log('SUCCESS');
+        //       },
+        //       (error) =>{
+        //           console.log('FAILED', error.text);
+        //       },
+        //   );
     }
 
-   function handleSubmit(event){
-    event.preventDefault();
-    setErrors(validValues(formData));
-    SetSuccess(true);
-   };
-
-   console.log(success);
-
-   useEffect(() => {
-    if (Object.keys(errors).length === 0 && success) {
-        // SetSuccess(true);
-        // return<Navigate to="/success" />
-        sendEmail();
-    }},[errors]);
-
-  const sendEmail = () => {  
-//   emailjs
-//   .sendForm('service_nr1vkos', 'template_zs8kkph', form.current, {
-//       publicKey: 'WEt2w76hRwRFGYvZo'
-//   })
-//   .then(
-//       () => {
-//           console.log('SUCCESS');
-//       },
-//       (error) =>{
-//           console.log('FAILED', error.text);
-//       },
-//   );
-}
-
     return (
-        
+
         <section id='contact' className="contact-container flex">
             <div className='contact-left-section light-black'>
-                <form ref={form} onSubmit={handleSubmit} className="flex" id="contact-page-contact-form"autoComplete='off'>
+                <form ref={form} onSubmit={formik.handleSubmit} className="flex" id="contact-page-contact-form" autoComplete='off'>
                     <h2 className=' outfit bold white-text text-center' id="contact-left-section-heading">Send us a message</h2>
-                    <div className="input-container">
-                        <div>
-                            <span className="material-symbols-outlined">person</span>
-                            <input type="text" id={id + 'name'} name="name" placeholder="Name ..." onChange={handleChange} value={formData.name} aria-label='name'
-                            style ={{border: errors.name ? "1px solid gray": null}}/>
-                        </div>
-                        {errors.name ? (<p className='error'>{errors.name}</p>): null}
+                    {/* Name */}
+                    <div className='form-input-div'>
+                        <label className={`label ${formik.touched.name && formik.errors.name ? "text-red" : ""}`} htmlFor="name">
+                            {formik.touched.name && formik.errors.name ? formik.errors.name : "Name"}</label>
+                        <input
+                            className='input-fields input-height'
+                            type="text" name='name'
+                            placeholder='Enter your name'
+                            value={formik.values.name}
+                            onChange={formik.handleChange}
+                            onBlur={formik.onBlur} />
                     </div>
-                    <div className="input-container">
-                        <div>
-                            <span className="material-symbols-outlined">call</span>
-                            <input type="tel" id={id + 'phone'} name="phone" placeholder="Phone Number ..." onChange={handleChange} value={formData.phone} aria-label='phone'
-                            style ={{border: errors.email ? "1px solid gray": null}}/>
-                        </div>
-                        {errors.phone ? (<p className='error'>Please enter a valid phone</p>): null}
-                    </div>
-                    <div className="input-container">
-                        <div>
-                            <span className="material-symbols-outlined">mail</span>
-                            <input type="email" id={id + 'email'} name="email" placeholder="Email ..." onChange={handleChange}  value={formData.email} aria-label='email'
-                            style ={{border: errors.email ? "1px solid gray": null}}/>
-                        </div>
-                        {errors.email ? (<p className='error'>{errors.email}</p>): null}
-                    </div>
-                    <div className="input-container">
-                        <div>
-                            <span className="material-symbols-outlined">description</span>
-                            <textarea type="text" id={id + 'description'} name="description" placeholder="Message..." onChange={handleChange} value={formData.description} aria-label='text-input'
-                            style ={{border: errors.description ? "1px solid gray": null}}>
-                             </textarea>
-                        </div>
-                        {errors.description ? (<p className='error'>{errors.description}</p>): null}
-                    </div>
-                    
 
-                    <button className='outfit bold'  id="Submit-button">Submit</button>
+                    {/* Phone */}
+                    <div className='form-input-div'>
+                        <label className={`label ${formik.touched.phone && formik.errors.phone ? "text-red" : ""}`} htmlFor="phone">
+                            {formik.touched.phone && formik.errors.phone ? formik.errors.phone : "Phone"}</label>
+                        <input
+                            className='input-fields input-height'
+                            type="number"
+                            name='phone'
+                            placeholder='Enter your phone'
+                            value={formik.values.phone}
+                            onChange={formik.handleChange}
+                            onBlur={formik.onBlur}
+                        />
+                    </div>
 
+                    {/* Email */}
+                    <div className='form-input-div'>
+                        <label className={`label ${formik.touched.email && formik.errors.email ? "text-red" : ""}`} htmlFor="email">
+                            {formik.touched.email && formik.errors.email ? formik.errors.email : "Email"}</label>
+                        <input
+                            className='input-fields input-height'
+                            type="email"
+                            name='email'
+                            placeholder='Enter your email'
+                            value={formik.values.email}
+                            onChange={formik.handleChange}
+                        />
+                    </div>
+
+                    {/* Message */}
+                    <div className='form-input-div'>
+                        <label className={`label ${formik.touched.message && formik.errors.message ? "text-red" : ""}`} htmlFor="message">
+                            {formik.touched.message && formik.errors.message ? formik.errors.message : "Message"}</label>
+                        <textarea
+                            rows="5"
+                            className='input-fields'
+                            type="text"
+                            name='message'
+                            placeholder='Enter your description'
+                            value={formik.values.message}
+                            onChange={formik.handleChange}
+                            onBlur={formik.onBlur}
+                        >
+                        </textarea>
+                    </div>
+                    {/* Submit */}
+                    <div className='form-input-div'>
+                        <button className='submit' id="Submit-button" type='submit'>Submit</button>
+                    </div>
                 </form>
             </div>
             <div className='contact-right-section'>
@@ -253,11 +269,6 @@ export default function Contact() {
                 </svg>
             </div>
 
-            <div className='Form-submit'>{Object.keys(errors).length === 0 && success ? (
-                <p>swdsd</p>
-                
-            ): null}
-            </div>
         </section>
     )
     // {Object.keys(errors).length === 0 && success ?(

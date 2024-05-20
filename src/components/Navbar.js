@@ -45,7 +45,7 @@ const [isOpen, setIsOpen] = useState(false);
                 <m.nav animate={isOpen ? "open" : "closed"}className="flex headerNav">
                     <div className='nav-width-60'>
                     <a id="header-nav-a-svg" href='#'><object className='headerSVG' data="./images/logo svg.svg" alt="logo"></object></a>
-                    <m.a class='nav-btn' id='navbar-toggle' onClick={() => {setIsOpen(!isOpen); openNav();}} ref={navBtn}>
+                    <m.a className='nav-btn' id='navbar-toggle' onClick={() => {setIsOpen(!isOpen); openNav();}} ref={navBtn}>
                         <span className='bar'></span>
                         <span className='bar'></span>
                         <span className='bar'></span>
@@ -112,7 +112,7 @@ const [isOpen, setIsOpen] = useState(false);
 
                     </m.div>
                 </m.nav>
-                <div className='get-in-touch relative white-text'><a className='get-in-touchbtn white-text'>{contact}</a></div>
+                <div className='get-in-touch relative white-text'><a href='#contact' className=' no-underline get-in-touchbtn white-text'>{contact}</a></div>
             </header>
            
 

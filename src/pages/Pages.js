@@ -9,11 +9,11 @@ import { Route, Routes } from "react-router-dom";
 export default function Pages(){
     return(
         <Routes>
-            <Route path="/" element={<Home/> }/>
-            <Route path="/" element={<About/>} />
-            <Route path="/" element={<Contact/>} />
-            <Route path="/" element={<Services/>} />
+            <Route index element={<Home/> }/>
             <Route path="/success" element={<Success/>} />
+            <Route path="/about" element={<About/>} />
+            <Route path="/contact" element={<Contact/>} />
+            <Route path="/services" element={<Services/>} />
         </Routes>
     )
 }
