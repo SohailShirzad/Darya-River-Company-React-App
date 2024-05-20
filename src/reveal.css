@@ -1,0 +1,8 @@
+.reveal-background{
+    position:absolute;
+    top: 4px;
+    bottom: 4px;
+    right: 0;
+    background: linear-gradient(to right, #ffffff 63%, #ff0000 100%);
+    z-index: 1;
+}
